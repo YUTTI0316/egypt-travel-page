@@ -1,0 +1,2092 @@
+{
+  "$schema": "./schemas/trip-data.schema.json",
+  "schemaVersion": "2.0-lite",
+  "config": {
+    "schemaVersion": "1.0.0",
+    "modules": {
+      "flights": true,
+      "overview": true,
+      "itinerary": true,
+      "todo": false,
+      "driving": false,
+      "ledger": true
+    },
+    "language": "zh-CN",
+    "persistence": {
+      "mode": "local"
+    }
+  },
+  "metadata": {
+    "tripId": "egypt-2027-01-trip",
+    "title": "埃及之旅 · 伊斯坦布尔转机",
+    "language": "zh-CN",
+    "assets": {
+      "routeMaps": [
+        "assets/maps/templates/template-10-broad-riverland.webp"
+      ]
+    }
+  },
+  "trip": {
+    "status": "draft",
+    "startDate": "2027-01-27",
+    "endDate": "2027-02-08",
+    "dayCount": 13,
+    "nightCountAway": 12,
+    "countries": [
+      {
+        "code": "CN",
+        "name": "中国",
+        "nameZh": "中国"
+      },
+      {
+        "code": "TR",
+        "name": "Turkey",
+        "nameZh": "土耳其"
+      },
+      {
+        "code": "EG",
+        "name": "Egypt",
+        "nameZh": "埃及"
+      }
+    ],
+    "primaryDestinationCountries": [
+      "EG"
+    ],
+    "citiesAndAreas": [
+      "伊斯坦布尔",
+      "赫尔格达",
+      "卢克索",
+      "阿斯旺",
+      "开罗"
+    ],
+    "routeSummary": "上海 → 广州 → 伊斯坦布尔 → 赫尔格达 → 卢克索 → 阿斯旺 → 开罗 → 伊斯坦布尔 → 上海",
+    "groupSize": null
+  },
+  "flightJourneys": [
+    {
+      "id": "journey-outbound-can",
+      "placeholder": false,
+      "status": "booked",
+      "title": "上海 → 广州",
+      "notes": [
+        "01-26 夜间出发，次日凌晨中转"
+      ]
+    },
+    {
+      "id": "journey-outbound-ist",
+      "placeholder": false,
+      "status": "booked",
+      "title": "广州 → 伊斯坦布尔",
+      "notes": [
+        "机票参考价 4010 / 3765"
+      ]
+    },
+    {
+      "id": "journey-outbound-hrg",
+      "placeholder": true,
+      "status": "pending",
+      "title": "伊斯坦布尔 → 赫尔格达",
+      "missingFields": [
+        "航班号",
+        "航空公司",
+        "起飞时间",
+        "抵达时间"
+      ],
+      "notes": [
+        "23:55-01:40，机票参考价 659 / 679；航班号待补充"
+      ]
+    },
+    {
+      "id": "journey-asw-cai",
+      "placeholder": false,
+      "status": "booked",
+      "title": "阿斯旺 → 开罗（已改签）",
+      "notes": [
+        "21:20-22:45，机票参考价 1038 + 235"
+      ]
+    },
+    {
+      "id": "journey-cai-ist",
+      "placeholder": false,
+      "status": "booked",
+      "title": "开罗 → 伊斯坦布尔",
+      "notes": [
+        "机票参考价 778；日期待确认（表内标注 02-06）"
+      ]
+    },
+    {
+      "id": "journey-ist-sha",
+      "placeholder": false,
+      "status": "booked",
+      "title": "伊斯坦布尔 → 上海",
+      "notes": [
+        "经济舱；02-08 13:35 起飞，次日 05:00 抵达"
+      ]
+    }
+  ],
+  "flights": [
+    {
+      "id": "flight-pvg-can",
+      "journeyId": "journey-outbound-can",
+      "sequence": 1,
+      "airline": {
+        "name": "China Southern",
+        "nameZh": "中国南方航空"
+      },
+      "flightNumber": "CZ8212",
+      "departure": {
+        "airportCode": "PVG",
+        "city": "上海",
+        "date": "2027-01-26",
+        "time": "20:25",
+        "utcOffset": "+08:00"
+      },
+      "arrival": {
+        "airportCode": "CAN",
+        "city": "广州",
+        "date": "2027-01-26",
+        "time": "23:10",
+        "utcOffset": "+08:00"
+      }
+    },
+    {
+      "id": "flight-can-ist",
+      "journeyId": "journey-outbound-ist",
+      "sequence": 1,
+      "airline": {
+        "name": "China Southern",
+        "nameZh": "中国南方航空"
+      },
+      "flightNumber": "CZ8065",
+      "departure": {
+        "airportCode": "CAN",
+        "city": "广州",
+        "date": "2027-01-27",
+        "time": "00:50",
+        "utcOffset": "+08:00"
+      },
+      "arrival": {
+        "airportCode": "IST",
+        "city": "伊斯坦布尔",
+        "date": "2027-01-27",
+        "time": "07:10",
+        "utcOffset": "+03:00"
+      }
+    },
+    {
+      "id": "flight-asw-cai",
+      "journeyId": "journey-asw-cai",
+      "sequence": 1,
+      "airline": {
+        "name": "待确认",
+        "nameZh": "待确认"
+      },
+      "flightNumber": "待补充",
+      "departure": {
+        "airportCode": "ASW",
+        "city": "阿斯旺",
+        "date": "2027-02-02",
+        "time": "21:20",
+        "utcOffset": "+02:00"
+      },
+      "arrival": {
+        "airportCode": "CAI",
+        "city": "开罗",
+        "date": "2027-02-02",
+        "time": "22:45",
+        "utcOffset": "+02:00"
+      }
+    },
+    {
+      "id": "flight-cai-ist",
+      "journeyId": "journey-cai-ist",
+      "sequence": 1,
+      "airline": {
+        "name": "待确认",
+        "nameZh": "待确认"
+      },
+      "flightNumber": "待补充",
+      "departure": {
+        "airportCode": "CAI",
+        "city": "开罗",
+        "date": "2027-02-06",
+        "time": "08:00",
+        "utcOffset": "+02:00"
+      },
+      "arrival": {
+        "airportCode": "IST",
+        "city": "伊斯坦布尔",
+        "date": "2027-02-06",
+        "time": "11:15",
+        "utcOffset": "+03:00"
+      }
+    },
+    {
+      "id": "flight-ist-sha",
+      "journeyId": "journey-ist-sha",
+      "sequence": 1,
+      "airline": {
+        "name": "China Eastern",
+        "nameZh": "中国东方航空"
+      },
+      "flightNumber": "MU704",
+      "departure": {
+        "airportCode": "IST",
+        "city": "伊斯坦布尔",
+        "date": "2027-02-08",
+        "time": "13:35",
+        "utcOffset": "+03:00"
+      },
+      "arrival": {
+        "airportCode": "SHA",
+        "city": "上海",
+        "date": "2027-02-09",
+        "time": "05:00",
+        "utcOffset": "+08:00"
+      },
+      "cabin": "Economy"
+    }
+  ],
+  "accommodations": [
+    {
+      "id": "stay-day1",
+      "name": "Redcon Suits（354）",
+      "city": "赫尔格达",
+      "address": "Red Sea Governorate, Hurghada",
+      "note": "第 1 晚；行程表登记于赫尔格达"
+    },
+    {
+      "id": "stay-day2",
+      "name": "索马湾凯宾斯基 Kempinski Hotel Soma Bay（2986）",
+      "city": "赫尔格达",
+      "address": "Soma Bay Safaga Road",
+      "note": "含早 + 晚"
+    },
+    {
+      "id": "stay-day4",
+      "name": "卢克索伊贝罗特酒店 Iberotel Luxor by JAZ（1448）",
+      "city": "卢克索",
+      "address": "Khaled Ibn Al Walid, Gazirat Al Awameyah",
+      "note": "双早，含早"
+    },
+    {
+      "id": "stay-day6",
+      "name": "民宿蓝莲花附近 Blue Lotus Nile Suites（247）",
+      "city": "阿斯旺",
+      "address": "Sheyakhah Oula, Aswan Governorate 81511"
+    },
+    {
+      "id": "stay-day7",
+      "name": "Malak Palace Cairo Hotel（895+466）",
+      "city": "开罗",
+      "address": "1 Al Borsa Al Gadida",
+      "note": "含早"
+    },
+    {
+      "id": "stay-day10",
+      "name": "Le Passage Cairo Hotel & Casino（590）",
+      "city": "开罗",
+      "address": "Cairo Int'l Airport Rd, Sheraton Al Matar"
+    }
+  ],
+  "groundTransport": {
+    "rentalCar": null,
+    "rentalChecklist": [],
+    "drivingNotes": [],
+    "drivingReferenceLinks": [],
+    "plannedRoadLegs": [
+      {
+        "id": "leg-hgd-lxr",
+        "mode": "包车",
+        "note": "赫尔格达 → 卢克索，经丹德拉神庙；包车价格不超过 EGP 3500，正常 4h，加丹德拉控制在 6h 内"
+      },
+      {
+        "id": "leg-lxr-asw",
+        "mode": "包车",
+        "note": "卢克索 → 阿斯旺，车程约 3-4h，约 EGP 2500"
+      }
+    ],
+    "publicTransitAndRail": []
+  },
+  "days": [
+    {
+      "day": 1,
+      "date": "2027-01-27",
+      "title": "伊斯坦布尔转机一日游",
+      "locations": [
+        "伊斯坦布尔"
+      ],
+      "schedule": [
+        {
+          "id": "item-d1-fly1",
+          "time": "01-26 20:25",
+          "type": "flight",
+          "text": "PVG-CAN CZ8212，上海 20:25 → 广州 23:10"
+        },
+        {
+          "id": "item-d1-fly2",
+          "time": "00:50",
+          "type": "flight",
+          "text": "CAN-IST CZ8065，广州 00:50 → 伊斯坦布尔 07:10"
+        },
+        {
+          "id": "item-d1-morning",
+          "time": "08:00",
+          "type": "activity",
+          "text": "8 点伊斯坦布尔机场到市区，找地方寄存行李"
+        },
+        {
+          "id": "item-d1-city",
+          "time": "白天",
+          "type": "activity",
+          "text": "伊斯坦布尔一日游（具体景点待补充）"
+        },
+        {
+          "id": "item-d1-evening",
+          "time": "18:00",
+          "type": "activity",
+          "text": "下午 6 点左右回机场，行李寄存"
+        },
+        {
+          "id": "item-d1-fly3",
+          "time": "23:55",
+          "type": "flight",
+          "text": "伊斯坦布尔 → 赫尔格达 23:55-01:40（航班号待补充）"
+        },
+        {
+          "id": "item-d1-stay",
+          "time": "抵达后",
+          "type": "stay",
+          "text": "住宿：Redcon Suits（354），Red Sea Governorate, Hurghada"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2027-01-28",
+      "title": "赫尔格达 · 追海豚出海",
+      "locations": [
+        "赫尔格达"
+      ],
+      "schedule": [
+        {
+          "id": "item-d2-morning",
+          "time": "上午",
+          "type": "activity",
+          "text": "预约上午追海豚，出海半日游"
+        },
+        {
+          "id": "item-d2-afternoon",
+          "time": "16:00",
+          "type": "activity",
+          "text": "下午 4 点打车去凯宾斯基"
+        },
+        {
+          "id": "item-d2-note",
+          "time": "备注",
+          "type": "note",
+          "text": "冬季海豚出现概率低，到一月时再看要不要追海豚；如果不追海豚，上午赫尔格达市区 citywalk，2 点打车去凯宾斯基"
+        },
+        {
+          "id": "item-d2-stay",
+          "time": "入住",
+          "type": "stay",
+          "text": "住宿：索马湾凯宾斯基 Kempinski Hotel Soma Bay（2986），含早 + 晚"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2027-01-29",
+      "title": "赫尔格达 · 浮潜与沙漠观星",
+      "locations": [
+        "赫尔格达"
+      ],
+      "schedule": [
+        {
+          "id": "item-d3-day",
+          "time": "白天",
+          "type": "activity",
+          "text": "躺平，浮潜"
+        },
+        {
+          "id": "item-d3-star",
+          "time": "16:00",
+          "type": "activity",
+          "text": "可选报沙漠观星团：下午 4 点酒店出发，穿越沙漠，坐吉普车、骑骆驼、观星，晚上 8 点左右返回酒店"
+        },
+        {
+          "id": "item-d3-stay",
+          "time": "住宿",
+          "type": "stay",
+          "text": "住宿待补充（是否延续索马湾凯宾斯基待确认）"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2027-01-30",
+      "title": "赫尔格达 → 卢克索 · 丹德拉与卡纳克",
+      "locations": [
+        "赫尔格达",
+        "丹德拉神庙",
+        "卢克索"
+      ],
+      "schedule": [
+        {
+          "id": "item-d4-pickup",
+          "time": "09:30",
+          "type": "transport",
+          "text": "上午 9 点 30 包车前往卢克索酒店（可在小红书找拼包车）"
+        },
+        {
+          "id": "item-d4-dendera",
+          "time": "途中",
+          "type": "activity",
+          "text": "中途包车去丹德拉神庙（Dendera Temple）游玩；包车价格不超过 EGP 3500，正常 4h，加丹德拉控制在 6h 内"
+        },
+        {
+          "id": "item-d4-hotel",
+          "time": "15:00",
+          "type": "activity",
+          "text": "下午 3 点左右到酒店，休息"
+        },
+        {
+          "id": "item-d4-east",
+          "time": "下午",
+          "type": "activity",
+          "text": "尼罗河东岸：尼罗河落日卢克索风帆船、卢克索神庙、冬宫（卡纳克神庙拍照打卡点很多，卢克索神庙比较小）"
+        },
+        {
+          "id": "item-d4-stay",
+          "time": "入住",
+          "type": "stay",
+          "text": "住宿：卢克索伊贝罗特酒店 Iberotel Luxor by JAZ（1448），双早"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2027-01-31",
+      "title": "卢克索 · 热气球与西岸帝王谷",
+      "locations": [
+        "卢克索"
+      ],
+      "schedule": [
+        {
+          "id": "item-d5-balloon",
+          "time": "04:30",
+          "type": "activity",
+          "text": "热气球首飞 4:30 据点出发，8 点回酒店吃早餐"
+        },
+        {
+          "id": "item-d5-west",
+          "time": "上午",
+          "type": "activity",
+          "text": "化妆出发后：帝王谷 → 哈布城 → 门农巨像"
+        },
+        {
+          "id": "item-d5-stay",
+          "time": "住宿",
+          "type": "stay",
+          "text": "住宿待补充"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2027-02-01",
+      "title": "卢克索 → 阿斯旺 · 老瀑布下午茶",
+      "locations": [
+        "卢克索",
+        "阿斯旺"
+      ],
+      "schedule": [
+        {
+          "id": "item-d6-karnak",
+          "time": "上午",
+          "type": "activity",
+          "text": "上午打卡卡纳克神庙拍照"
+        },
+        {
+          "id": "item-d6-transfer",
+          "time": "11:00",
+          "type": "transport",
+          "text": "11 点卢克索 → 阿斯旺，3-4h（约 EGP 2500）"
+        },
+        {
+          "id": "item-d6-afternoon",
+          "time": "15:00",
+          "type": "activity",
+          "text": "下午 3 点老瀑布下午茶、坐船看尼罗河日落"
+        },
+        {
+          "id": "item-d6-stay",
+          "time": "入住",
+          "type": "stay",
+          "text": "住宿：民宿蓝莲花附近 Blue Lotus Nile Suites（247）"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2027-02-02",
+      "title": "阿斯旺 · 阿布辛贝与菲莱神庙",
+      "locations": [
+        "阿斯旺",
+        "阿布辛贝神庙",
+        "菲莱神庙"
+      ],
+      "schedule": [
+        {
+          "id": "item-d7-abusimbel",
+          "time": "全天",
+          "type": "activity",
+          "text": "一日往返阿布辛贝神庙、菲莱神庙"
+        },
+        {
+          "id": "item-d7-airport",
+          "time": "18:00 前",
+          "type": "activity",
+          "text": "下午 6 点前到机场"
+        },
+        {
+          "id": "item-d7-fly",
+          "time": "21:20",
+          "type": "flight",
+          "text": "阿斯旺 → 开罗 21:20-22:45（已改签，1038+235）"
+        },
+        {
+          "id": "item-d7-stay",
+          "time": "抵达后",
+          "type": "stay",
+          "text": "住宿：Malak Palace Cairo Hotel（895+466），含早"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "date": "2027-02-03",
+      "title": "开罗 · 老城与萨拉丁城堡落日",
+      "locations": [
+        "开罗"
+      ],
+      "schedule": [
+        {
+          "id": "item-d8-morning",
+          "time": "上午",
+          "type": "activity",
+          "text": "逛街：Maadi、Zamalek 区"
+        },
+        {
+          "id": "item-d8-afternoon",
+          "time": "下午",
+          "type": "activity",
+          "text": "盖尔安德森博物馆 → 伊本图伦清真寺 → 苏丹哈桑清真寺 → 瑞法伊清真寺"
+        },
+        {
+          "id": "item-d8-citadel",
+          "time": "16:00",
+          "type": "activity",
+          "text": "16:00 萨拉丁城堡看落日"
+        },
+        {
+          "id": "item-d8-khan",
+          "time": "18:00",
+          "type": "activity",
+          "text": "18:00 哈利利市场"
+        },
+        {
+          "id": "item-d8-stay",
+          "time": "住宿",
+          "type": "stay",
+          "text": "住宿待补充"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "date": "2027-02-04",
+      "title": "吉萨金字塔与大埃及博物馆",
+      "locations": [
+        "吉萨金字塔",
+        "大埃及博物馆",
+        "解放广场"
+      ],
+      "schedule": [
+        {
+          "id": "item-d9-pyramid",
+          "time": "07:30",
+          "type": "activity",
+          "text": "7:30 酒店出发前往金字塔"
+        },
+        {
+          "id": "item-d9-gem",
+          "time": "13:00",
+          "type": "activity",
+          "text": "预约下午 1 点的大埃及博物馆"
+        },
+        {
+          "id": "item-d9-tahrir",
+          "time": "17:30",
+          "type": "activity",
+          "text": "17:30 抵达解放广场附近吃饭"
+        },
+        {
+          "id": "item-d9-stay",
+          "time": "住宿",
+          "type": "stay",
+          "text": "住宿待补充"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "date": "2027-02-05",
+      "title": "开罗 · 埃及博物馆与 Citystar 逛街",
+      "locations": [
+        "开罗"
+      ],
+      "schedule": [
+        {
+          "id": "item-d10-brunch",
+          "time": "上午",
+          "type": "activity",
+          "text": "吃早午饭，退房"
+        },
+        {
+          "id": "item-d10-museum",
+          "time": "10:30",
+          "type": "activity",
+          "text": "10:30 埃及博物馆"
+        },
+        {
+          "id": "item-d10-citystar",
+          "time": "下午",
+          "type": "activity",
+          "text": "Citystar 区逛街"
+        },
+        {
+          "id": "item-d10-stay",
+          "time": "入住",
+          "type": "stay",
+          "text": "住宿：Le Passage Cairo Hotel & Casino（590），Cairo Int'l Airport Rd"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "date": "2027-02-06",
+      "title": "开罗 → 伊斯坦布尔",
+      "locations": [
+        "开罗",
+        "伊斯坦布尔"
+      ],
+      "schedule": [
+        {
+          "id": "item-d11-fly",
+          "time": "08:00",
+          "type": "flight",
+          "text": "开罗 → 伊斯坦布尔 08:00-11:15（778）"
+        },
+        {
+          "id": "item-d11-rest",
+          "time": "白天",
+          "type": "note",
+          "text": "伊斯坦布尔 solo trip（具体安排待补充）"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "date": "2027-02-07",
+      "title": "伊斯坦布尔停留",
+      "locations": [
+        "伊斯坦布尔"
+      ],
+      "schedule": [
+        {
+          "id": "item-d12-rest",
+          "time": "全天",
+          "type": "note",
+          "text": "solo trip，具体安排待补充"
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "date": "2027-02-08",
+      "title": "伊斯坦布尔 → 上海",
+      "locations": [
+        "伊斯坦布尔",
+        "上海"
+      ],
+      "schedule": [
+        {
+          "id": "item-d13-fly",
+          "time": "13:35",
+          "type": "flight",
+          "text": "IST-SHA MU704 经济舱，2027-02-08 13:35 → 02-09 05:00(+1)"
+        }
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "place-cai",
+      "nameZh": "开罗",
+      "category": "city",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 30.0444,
+        "lng": 31.2357
+      }
+    },
+    {
+      "id": "place-giza",
+      "nameZh": "吉萨金字塔",
+      "category": "attraction",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 29.9792,
+        "lng": 31.1342
+      }
+    },
+    {
+      "id": "place-gem",
+      "nameZh": "大埃及博物馆",
+      "category": "attraction",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 29.9935,
+        "lng": 31.2048
+      }
+    },
+    {
+      "id": "place-hurghada",
+      "nameZh": "赫尔格达",
+      "category": "city",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 27.2579,
+        "lng": 33.8116
+      }
+    },
+    {
+      "id": "place-dendera",
+      "nameZh": "丹德拉神庙",
+      "category": "attraction",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 26.1567,
+        "lng": 32.6654
+      }
+    },
+    {
+      "id": "place-luxor",
+      "nameZh": "卢克索",
+      "category": "city",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 25.6872,
+        "lng": 32.6396
+      }
+    },
+    {
+      "id": "place-karnak",
+      "nameZh": "卡纳克神庙",
+      "category": "attraction",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 25.7189,
+        "lng": 32.6573
+      }
+    },
+    {
+      "id": "place-luxor-temple",
+      "nameZh": "卢克索神庙",
+      "category": "attraction",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 25.6992,
+        "lng": 32.6397
+      }
+    },
+    {
+      "id": "place-valley-kings",
+      "nameZh": "帝王谷",
+      "category": "attraction",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 25.7413,
+        "lng": 32.6014
+      }
+    },
+    {
+      "id": "place-habu",
+      "nameZh": "哈布城",
+      "category": "attraction",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 25.7311,
+        "lng": 32.5851
+      }
+    },
+    {
+      "id": "place-colossi",
+      "nameZh": "门农巨像",
+      "category": "attraction",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 25.7218,
+        "lng": 32.6109
+      }
+    },
+    {
+      "id": "place-aswan",
+      "nameZh": "阿斯旺",
+      "category": "city",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 24.0889,
+        "lng": 32.8998
+      }
+    },
+    {
+      "id": "place-abu-simbel",
+      "nameZh": "阿布辛贝神庙",
+      "category": "attraction",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 22.3372,
+        "lng": 31.6258
+      }
+    },
+    {
+      "id": "place-philae",
+      "nameZh": "菲莱神庙",
+      "category": "attraction",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 24.0231,
+        "lng": 32.8958
+      }
+    },
+    {
+      "id": "place-citadel",
+      "nameZh": "萨拉丁城堡",
+      "category": "attraction",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 30.0288,
+        "lng": 31.2547
+      }
+    },
+    {
+      "id": "place-khan",
+      "nameZh": "哈利利市场",
+      "category": "attraction",
+      "countryCode": "EG",
+      "geo": {
+        "lat": 30.0475,
+        "lng": 31.2628
+      }
+    }
+  ],
+  "restaurants": [],
+  "bookingsAndTickets": [],
+  "ticketPlanning": {
+    "statusStorage": "local",
+    "statusStorageNote": "门票状态默认只保存在当前浏览器。",
+    "items": [
+      {
+        "id": "ticket-dendera",
+        "name": "丹德拉神庙",
+        "day": 4,
+        "requirement": "needed",
+        "price": "300 / 150（06:00-17:00）",
+        "note": "外籍 / 学生两档"
+      },
+      {
+        "id": "ticket-luxor-temple",
+        "name": "卢克索神庙",
+        "day": 4,
+        "requirement": "needed",
+        "price": "500 / 250（06:00-20:00）",
+        "note": "外籍 / 学生两档"
+      },
+      {
+        "id": "ticket-luxor-museum",
+        "name": "卢克索博物馆",
+        "day": 4,
+        "requirement": "planned",
+        "price": "400 / 200",
+        "note": "外籍 / 学生两档"
+      },
+      {
+        "id": "ticket-valley-kings",
+        "name": "帝王谷",
+        "day": 5,
+        "requirement": "needed",
+        "price": "750 / 375（06:00-17:00）",
+        "note": "外籍 / 学生两档"
+      },
+      {
+        "id": "ticket-queens",
+        "name": "王后谷",
+        "day": 5,
+        "requirement": "planned",
+        "price": "220 / 110（06:00-17:00）"
+      },
+      {
+        "id": "ticket-habu",
+        "name": "哈布城",
+        "day": 5,
+        "requirement": "needed",
+        "price": "220 / 110（06:00-17:00）"
+      },
+      {
+        "id": "ticket-hatshepsut",
+        "name": "女王神庙",
+        "day": 5,
+        "requirement": "planned",
+        "price": "440 / 220（06:00-17:00）"
+      },
+      {
+        "id": "ticket-karnak",
+        "name": "卡纳克神庙",
+        "day": 6,
+        "requirement": "needed",
+        "price": "600 / 300（06:00-17:30）"
+      },
+      {
+        "id": "ticket-abu-simbel",
+        "name": "阿布辛贝神庙",
+        "day": 7,
+        "requirement": "needed",
+        "price": "822 / 446（06:00-17:00）"
+      },
+      {
+        "id": "ticket-philae",
+        "name": "菲莱神庙",
+        "day": 7,
+        "requirement": "needed",
+        "price": "550 / 225（07:00-16:00）"
+      },
+      {
+        "id": "ticket-giza",
+        "name": "吉萨金字塔",
+        "day": 9,
+        "requirement": "needed",
+        "price": "700 / 350（07:00-17:00）"
+      },
+      {
+        "id": "ticket-gem",
+        "name": "大埃及博物馆",
+        "day": 9,
+        "requirement": "planned",
+        "price": "1450 / 730（09:00-18:00）",
+        "note": "需提前两个月预定"
+      },
+      {
+        "id": "ticket-egyptian-museum",
+        "name": "埃及博物馆",
+        "day": 10,
+        "requirement": "needed",
+        "price": "550 / 275（09:00-）"
+      },
+      {
+        "id": "ticket-citadel",
+        "name": "萨拉丁城堡",
+        "day": 10,
+        "requirement": "planned",
+        "price": "550 / 275（08:00-）"
+      }
+    ]
+  },
+  "preTrip": {
+    "packingItems": [],
+    "preparationsExplicitlyMentioned": [],
+    "missingNote": "To Do 模块未开启；表中无明确待办清单。"
+  },
+  "issuesAndUncertainties": [
+    {
+      "id": "issue-date-year",
+      "severity": "warning",
+      "status": "accepted-for-preview",
+      "title": "出发年份待确认",
+      "detail": "表内日期序列号为 2026-01-27，航班文字标注 2027-01-27；页面暂按 2027 年录入。"
+    },
+    {
+      "id": "issue-ist-hrg-flight",
+      "severity": "warning",
+      "status": "accepted-for-preview",
+      "title": "伊斯坦布尔 → 赫尔格达航班号缺失",
+      "detail": "仅有时刻 23:55-01:40 与票价 659/679，航班号与航司待补充。"
+    },
+    {
+      "id": "issue-day3-stay",
+      "severity": "info",
+      "status": "accepted-for-preview",
+      "title": "第 3 天住宿待补充",
+      "detail": "赫尔格达浮潜观星日是否延续索马湾凯宾斯基待确认。"
+    },
+    {
+      "id": "issue-day5-stay",
+      "severity": "info",
+      "status": "accepted-for-preview",
+      "title": "第 5 天住宿待补充",
+      "detail": "卢克索热气球日住宿未登记。"
+    },
+    {
+      "id": "issue-day8-stay",
+      "severity": "info",
+      "status": "accepted-for-preview",
+      "title": "第 8 天住宿待补充",
+      "detail": "开罗老城日住宿未登记。"
+    },
+    {
+      "id": "issue-day9-stay",
+      "severity": "info",
+      "status": "accepted-for-preview",
+      "title": "第 9 天住宿待补充",
+      "detail": "金字塔与大埃及博物馆日住宿未登记。"
+    },
+    {
+      "id": "issue-ist-itinerary",
+      "severity": "info",
+      "status": "accepted-for-preview",
+      "title": "伊斯坦布尔两日安排待补充",
+      "detail": "第 1 日市区景点与第 12 日 solo trip 具体行程未登记。"
+    },
+    {
+      "id": "issue-currency",
+      "severity": "warning",
+      "status": "accepted-for-preview",
+      "title": "记账货币待确认",
+      "detail": "表内价格含 EGP 与未标注币种的票价；记账模块为本地录入，账单与汇率请在页面内自行补充。"
+    }
+  ],
+  "map": {
+    "schemaVersion": "1.0-lite",
+    "mapMode": "template-auto",
+    "templateId": "auto",
+    "disclaimer": "本图仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。",
+    "region": {
+      "id": "egypt",
+      "label": "埃及",
+      "countryCode": "EG"
+    },
+    "regions": [
+      {
+        "id": "egypt",
+        "label": "埃及",
+        "countryCode": "EG",
+        "countryCodes": [
+          "EG"
+        ]
+      }
+    ],
+    "places": [
+      {
+        "id": "place-hurghada",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 27.2579,
+          "lng": 33.8116
+        },
+        "nameZh": "赫尔格达"
+      },
+      {
+        "id": "place-dendera",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 26.1567,
+          "lng": 32.6654
+        },
+        "nameZh": "丹德拉神庙"
+      },
+      {
+        "id": "place-luxor",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 25.6872,
+          "lng": 32.6396
+        },
+        "nameZh": "卢克索"
+      },
+      {
+        "id": "place-karnak",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 25.7189,
+          "lng": 32.6573
+        },
+        "nameZh": "卡纳克神庙"
+      },
+      {
+        "id": "place-luxor-temple",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 25.6992,
+          "lng": 32.6397
+        },
+        "nameZh": "卢克索神庙"
+      },
+      {
+        "id": "place-valley-kings",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 25.7413,
+          "lng": 32.6014
+        },
+        "nameZh": "帝王谷"
+      },
+      {
+        "id": "place-habu",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 25.7311,
+          "lng": 32.5851
+        },
+        "nameZh": "哈布城"
+      },
+      {
+        "id": "place-colossi",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 25.7218,
+          "lng": 32.6109
+        },
+        "nameZh": "门农巨像"
+      },
+      {
+        "id": "place-aswan",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 24.0889,
+          "lng": 32.8998
+        },
+        "nameZh": "阿斯旺"
+      },
+      {
+        "id": "place-abu-simbel",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 22.3372,
+          "lng": 31.6258
+        },
+        "nameZh": "阿布辛贝神庙"
+      },
+      {
+        "id": "place-philae",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 24.0231,
+          "lng": 32.8958
+        },
+        "nameZh": "菲莱神庙"
+      },
+      {
+        "id": "place-cai",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 30.0444,
+          "lng": 31.2357
+        },
+        "nameZh": "开罗"
+      },
+      {
+        "id": "place-giza",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 29.9792,
+          "lng": 31.1342
+        },
+        "nameZh": "吉萨金字塔"
+      },
+      {
+        "id": "place-gem",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 29.9935,
+          "lng": 31.2048
+        },
+        "nameZh": "大埃及博物馆"
+      },
+      {
+        "id": "place-citadel",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 30.0288,
+          "lng": 31.2547
+        },
+        "nameZh": "萨拉丁城堡"
+      },
+      {
+        "id": "place-khan",
+        "countryCode": "EG",
+        "geo": {
+          "lat": 30.0475,
+          "lng": 31.2628
+        },
+        "nameZh": "哈利利市场"
+      }
+    ],
+    "routes": [
+      {
+        "day": 4,
+        "placeIds": [
+          "place-hurghada",
+          "place-dendera",
+          "place-luxor",
+          "place-karnak",
+          "place-luxor-temple"
+        ]
+      },
+      {
+        "day": 5,
+        "placeIds": [
+          "place-luxor",
+          "place-valley-kings",
+          "place-habu",
+          "place-colossi"
+        ]
+      },
+      {
+        "day": 6,
+        "placeIds": [
+          "place-karnak",
+          "place-luxor",
+          "place-aswan"
+        ]
+      },
+      {
+        "day": 7,
+        "placeIds": [
+          "place-aswan",
+          "place-abu-simbel",
+          "place-philae",
+          "place-cai"
+        ]
+      },
+      {
+        "day": 8,
+        "placeIds": [
+          "place-cai",
+          "place-citadel",
+          "place-khan"
+        ]
+      },
+      {
+        "day": 9,
+        "placeIds": [
+          "place-giza",
+          "place-gem",
+          "place-cai"
+        ]
+      }
+    ],
+    "dailyRoutes": [
+      {
+        "day": 4,
+        "placeIds": [
+          "place-hurghada",
+          "place-dendera",
+          "place-luxor"
+        ]
+      },
+      {
+        "day": 5,
+        "placeIds": [
+          "place-luxor",
+          "place-valley-kings",
+          "place-habu",
+          "place-colossi"
+        ]
+      },
+      {
+        "day": 6,
+        "placeIds": [
+          "place-luxor",
+          "place-aswan"
+        ]
+      },
+      {
+        "day": 7,
+        "placeIds": [
+          "place-aswan",
+          "place-philae",
+          "place-abu-simbel"
+        ]
+      },
+      {
+        "day": 8,
+        "placeIds": [
+          "place-cai",
+          "place-citadel",
+          "place-khan"
+        ]
+      },
+      {
+        "day": 9,
+        "placeIds": [
+          "place-giza",
+          "place-gem",
+          "place-cai"
+        ]
+      }
+    ]
+  },
+  "mapLinks": {
+    "providedGoogleMapsLinks": [],
+    "note": "",
+    "cityLevelNavigationDisabled": false,
+    "navigationPolicy": {
+      "noNavigationTypes": [
+        "flight",
+        "note",
+        "rest"
+      ],
+      "selfNavigationTypes": [
+        "drive",
+        "return",
+        "transfer",
+        "check-in",
+        "check-out",
+        "restaurant",
+        "attraction",
+        "walk",
+        "hike"
+      ]
+    },
+    "navigationPlaces": []
+  },
+  "routeMap": {
+    "defaultRegionId": "egypt",
+    "regions": [
+      {
+        "id": "egypt",
+        "label": "埃及",
+        "countryCode": "EG",
+        "scope": "template-schematic",
+        "mapMode": "frozen-template",
+        "templateId": "broad-riverland",
+        "mapModeReason": "separated-clusters-or-long-jump",
+        "mapModeMetrics": {
+          "placeCount": 16,
+          "geoPlaceCount": 16,
+          "widthKm": 265.35,
+          "heightKm": 855.84,
+          "spanKm": 858.11,
+          "averageNearestKm": 30.53,
+          "components": 1,
+          "largestLegKm": 689.4,
+          "jumpRatio": 98.73
+        },
+        "days": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "canvas": {
+          "width": 1448,
+          "height": 1086
+        },
+        "projection": {
+          "type": "relative-schematic",
+          "bounds": null
+        },
+        "baseImage": "assets/maps/templates/template-10-broad-riverland.webp",
+        "title": "埃及 · 旅行路线",
+        "ariaLabel": "埃及模板化旅行路线示意图，共6天",
+        "disclaimer": "本图仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。",
+        "heading": {
+          "text": "埃及",
+          "x": 33,
+          "y": 105,
+          "size": 40
+        },
+        "legend": {
+          "x": 35,
+          "y": 168,
+          "gap": 43
+        },
+        "annotations": [],
+        "routes": [
+          {
+            "day": 4,
+            "color": "#209aaa",
+            "placeIds": [
+              "place-hurghada",
+              "place-dendera",
+              "place-luxor",
+              "place-karnak",
+              "place-luxor-temple"
+            ],
+            "paths": [
+              "M815.95 422.45 C770.1 423.3 728.1 436.5 692.48 461.25 C690.6 495.7 679.5 527.0 659.89 553.08 C725.3 559.1 787.1 546.8 841.65 517.18 C784.1 581.3 713.7 624.7 634.78 644.87"
+            ],
+            "overviewPaths": [
+              "M815.95 422.45 C749.8 451.3 696.8 495.7 659.89 553.08 C718.1 522.7 779.9 510.5 841.65 517.18 C758.5 539.9 688.2 583.3 634.78 644.87"
+            ]
+          },
+          {
+            "day": 5,
+            "color": "#8865a5",
+            "placeIds": [
+              "place-luxor",
+              "place-valley-kings",
+              "place-habu",
+              "place-colossi"
+            ],
+            "paths": [
+              "M659.89 553.08 C688.0 537.7 718.0 531.2 748.12 533.86 C729.6 562.8 720.4 594.5 721.1 626.95 C750.2 610.4 781.4 603.0 812.98 605.29"
+            ],
+            "overviewPaths": [
+              "M659.89 553.08 C717.2 555.5 769.2 573.3 812.98 605.29"
+            ]
+          },
+          {
+            "day": 6,
+            "color": "#df6185",
+            "placeIds": [
+              "place-karnak",
+              "place-luxor",
+              "place-aswan"
+            ],
+            "paths": [
+              "M841.65 517.18 C776.3 511.2 714.5 523.4 659.89 553.08 C724.7 592.3 773.7 646.0 804.02 710.91"
+            ],
+            "overviewPaths": [
+              "M841.65 517.18 C776.3 511.2 714.5 523.4 659.89 553.08 C724.7 592.3 773.7 646.0 804.02 710.91"
+            ]
+          },
+          {
+            "day": 7,
+            "color": "#397dc1",
+            "placeIds": [
+              "place-aswan",
+              "place-abu-simbel",
+              "place-philae",
+              "place-cai"
+            ],
+            "paths": [
+              "M804.02 710.91 C768.0 772.6 718.1 819.6 657.38 849.2 C687.7 813.7 706.1 772.9 711.33 729.03 C683.3 540.1 685.3 351.5 717.1 174.3"
+            ],
+            "overviewPaths": [
+              "M804.02 710.91 C744.9 533.3 715.3 350.8 717.1 174.3"
+            ]
+          },
+          {
+            "day": 8,
+            "color": "#e77e22",
+            "placeIds": [
+              "place-cai",
+              "place-citadel",
+              "place-khan"
+            ],
+            "paths": [
+              "M717.1 174.3 C653.3 160.1 590.7 164.2 532.96 186.57 C564.8 176.2 596.9 175.3 627.46 183.83"
+            ],
+            "overviewPaths": [
+              "M717.1 174.3 C653.3 160.1 590.7 164.2 532.96 186.57 C564.8 176.2 596.9 175.3 627.46 183.83"
+            ]
+          },
+          {
+            "day": 9,
+            "color": "#618344",
+            "placeIds": [
+              "place-giza",
+              "place-gem",
+              "place-cai"
+            ],
+            "paths": [
+              "M582.06 270.1 C613.4 257.7 645.6 254.8 676.73 261.58 C699.2 235.9 712.9 206.3 717.1 174.3"
+            ],
+            "overviewPaths": [
+              "M582.06 270.1 C618.4 224.0 664.3 191.5 717.1 174.3"
+            ]
+          }
+        ],
+        "places": [
+          {
+            "id": "place-hurghada",
+            "x": 815.95,
+            "y": 422.45,
+            "color": "#209aaa",
+            "tx": 847.95,
+            "ty": 390.45,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "赫尔格达"
+            ],
+            "query": "赫尔格达 埃及",
+            "geo": {
+              "lat": 27.2579,
+              "lng": 33.8116
+            },
+            "days": [
+              4
+            ]
+          },
+          {
+            "id": "place-dendera",
+            "x": 692.48,
+            "y": 461.25,
+            "color": "#209aaa",
+            "tx": 660.48,
+            "ty": 429.25,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "丹德拉神庙"
+            ],
+            "query": "丹德拉神庙 埃及",
+            "geo": {
+              "lat": 26.1567,
+              "lng": 32.6654
+            },
+            "days": [
+              4
+            ]
+          },
+          {
+            "id": "place-luxor",
+            "x": 659.89,
+            "y": 553.08,
+            "color": "#209aaa",
+            "tx": 581.89,
+            "ty": 491.08,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "卢克索"
+            ],
+            "query": "卢克索 埃及",
+            "geo": {
+              "lat": 25.6872,
+              "lng": 32.6396
+            },
+            "days": [
+              4,
+              5,
+              6
+            ]
+          },
+          {
+            "id": "place-karnak",
+            "x": 841.65,
+            "y": 517.18,
+            "color": "#209aaa",
+            "tx": 979.65,
+            "ty": 619.18,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "卡纳克神庙"
+            ],
+            "query": "卡纳克神庙 埃及",
+            "geo": {
+              "lat": 25.7189,
+              "lng": 32.6573
+            },
+            "days": [
+              4,
+              6
+            ]
+          },
+          {
+            "id": "place-luxor-temple",
+            "x": 634.78,
+            "y": 644.87,
+            "color": "#209aaa",
+            "tx": 496.78,
+            "ty": 556.87,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "卢克索神庙"
+            ],
+            "query": "卢克索神庙 埃及",
+            "geo": {
+              "lat": 25.6992,
+              "lng": 32.6397
+            },
+            "days": [
+              4
+            ]
+          },
+          {
+            "id": "place-valley-kings",
+            "x": 748.12,
+            "y": 533.86,
+            "color": "#8865a5",
+            "tx": 610.12,
+            "ty": 635.86,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "帝王谷"
+            ],
+            "query": "帝王谷 埃及",
+            "geo": {
+              "lat": 25.7413,
+              "lng": 32.6014
+            },
+            "days": [
+              5
+            ]
+          },
+          {
+            "id": "place-habu",
+            "x": 721.1,
+            "y": 626.95,
+            "color": "#8865a5",
+            "tx": 643.1,
+            "ty": 702.95,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "哈布城"
+            ],
+            "query": "哈布城 埃及",
+            "geo": {
+              "lat": 25.7311,
+              "lng": 32.5851
+            },
+            "days": [
+              5
+            ]
+          },
+          {
+            "id": "place-colossi",
+            "x": 812.98,
+            "y": 605.29,
+            "color": "#8865a5",
+            "tx": 890.98,
+            "ty": 543.29,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "门农巨像"
+            ],
+            "query": "门农巨像 埃及",
+            "geo": {
+              "lat": 25.7218,
+              "lng": 32.6109
+            },
+            "days": [
+              5
+            ]
+          },
+          {
+            "id": "place-aswan",
+            "x": 804.02,
+            "y": 710.91,
+            "color": "#df6185",
+            "tx": 882.02,
+            "ty": 786.91,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "阿斯旺"
+            ],
+            "query": "阿斯旺 埃及",
+            "geo": {
+              "lat": 24.0889,
+              "lng": 32.8998
+            },
+            "days": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "place-abu-simbel",
+            "x": 657.38,
+            "y": 849.2,
+            "color": "#397dc1",
+            "tx": 579.38,
+            "ty": 787.2,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "阿布辛贝神庙"
+            ],
+            "query": "阿布辛贝神庙 埃及",
+            "geo": {
+              "lat": 22.3372,
+              "lng": 31.6258
+            },
+            "days": [
+              7
+            ]
+          },
+          {
+            "id": "place-philae",
+            "x": 711.33,
+            "y": 729.03,
+            "color": "#397dc1",
+            "tx": 743.33,
+            "ty": 697.03,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "菲莱神庙"
+            ],
+            "query": "菲莱神庙 埃及",
+            "geo": {
+              "lat": 24.0231,
+              "lng": 32.8958
+            },
+            "days": [
+              7
+            ]
+          },
+          {
+            "id": "place-cai",
+            "x": 717.1,
+            "y": 174.3,
+            "color": "#397dc1",
+            "tx": 855.1,
+            "ty": 276.3,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "开罗"
+            ],
+            "query": "开罗 埃及",
+            "geo": {
+              "lat": 30.0444,
+              "lng": 31.2357
+            },
+            "days": [
+              7,
+              8,
+              9
+            ]
+          },
+          {
+            "id": "place-giza",
+            "x": 582.06,
+            "y": 270.1,
+            "color": "#618344",
+            "tx": 614.06,
+            "ty": 320.1,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "吉萨金字塔"
+            ],
+            "query": "吉萨金字塔 埃及",
+            "geo": {
+              "lat": 29.9792,
+              "lng": 31.1342
+            },
+            "days": [
+              9
+            ]
+          },
+          {
+            "id": "place-gem",
+            "x": 676.73,
+            "y": 261.58,
+            "color": "#618344",
+            "tx": 754.73,
+            "ty": 199.58,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "大埃及博物馆"
+            ],
+            "query": "大埃及博物馆 埃及",
+            "geo": {
+              "lat": 29.9935,
+              "lng": 31.2048
+            },
+            "days": [
+              9
+            ]
+          },
+          {
+            "id": "place-citadel",
+            "x": 532.96,
+            "y": 186.57,
+            "color": "#e77e22",
+            "tx": 610.96,
+            "ty": 124.57,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "萨拉丁城堡"
+            ],
+            "query": "萨拉丁城堡 埃及",
+            "geo": {
+              "lat": 30.0288,
+              "lng": 31.2547
+            },
+            "days": [
+              8
+            ]
+          },
+          {
+            "id": "place-khan",
+            "x": 627.46,
+            "y": 183.83,
+            "color": "#e77e22",
+            "tx": 549.46,
+            "ty": 121.83,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "哈利利市场"
+            ],
+            "query": "哈利利市场 埃及",
+            "geo": {
+              "lat": 30.0475,
+              "lng": 31.2628
+            },
+            "days": [
+              8
+            ]
+          }
+        ],
+        "overviewPlaceIds": [
+          "place-hurghada",
+          "place-luxor",
+          "place-karnak",
+          "place-luxor-temple",
+          "place-colossi",
+          "place-aswan",
+          "place-cai",
+          "place-citadel",
+          "place-khan",
+          "place-giza"
+        ],
+        "dailyLayouts": {
+          "4": {
+            "places": [
+              "place-hurghada",
+              "place-dendera",
+              "place-luxor"
+            ],
+            "labels": {
+              "place-hurghada": {
+                "x": 847.95,
+                "y": 390.45,
+                "anchor": "start"
+              },
+              "place-dendera": {
+                "x": 660.48,
+                "y": 429.25,
+                "anchor": "end"
+              },
+              "place-luxor": {
+                "x": 581.89,
+                "y": 491.08,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 754.22,
+                "y": 441.85
+              },
+              {
+                "items": [],
+                "x": 676.18,
+                "y": 507.17
+              }
+            ]
+          },
+          "5": {
+            "places": [
+              "place-luxor",
+              "place-valley-kings",
+              "place-habu",
+              "place-colossi"
+            ],
+            "labels": {
+              "place-luxor": {
+                "x": 581.89,
+                "y": 491.08,
+                "anchor": "end"
+              },
+              "place-valley-kings": {
+                "x": 610.12,
+                "y": 635.86,
+                "anchor": "end"
+              },
+              "place-habu": {
+                "x": 643.1,
+                "y": 702.95,
+                "anchor": "end"
+              },
+              "place-colossi": {
+                "x": 890.98,
+                "y": 543.29,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 704,
+                "y": 543.47
+              },
+              {
+                "items": [],
+                "x": 734.61,
+                "y": 580.4
+              },
+              {
+                "items": [],
+                "x": 767.04,
+                "y": 616.12
+              }
+            ]
+          },
+          "6": {
+            "places": [
+              "place-luxor",
+              "place-aswan"
+            ],
+            "labels": {
+              "place-luxor": {
+                "x": 581.89,
+                "y": 491.08,
+                "anchor": "end"
+              },
+              "place-aswan": {
+                "x": 882.02,
+                "y": 786.91,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 731.95,
+                "y": 632
+              }
+            ]
+          },
+          "7": {
+            "places": [
+              "place-aswan",
+              "place-philae",
+              "place-abu-simbel"
+            ],
+            "labels": {
+              "place-aswan": {
+                "x": 882.02,
+                "y": 786.91,
+                "anchor": "start"
+              },
+              "place-philae": {
+                "x": 743.33,
+                "y": 697.03,
+                "anchor": "start"
+              },
+              "place-abu-simbel": {
+                "x": 579.38,
+                "y": 787.2,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 757.67,
+                "y": 719.97
+              },
+              {
+                "items": [],
+                "x": 684.36,
+                "y": 789.12
+              }
+            ]
+          },
+          "8": {
+            "places": [
+              "place-cai",
+              "place-citadel",
+              "place-khan"
+            ],
+            "labels": {
+              "place-cai": {
+                "x": 855.1,
+                "y": 276.3,
+                "anchor": "start"
+              },
+              "place-citadel": {
+                "x": 610.96,
+                "y": 124.57,
+                "anchor": "start"
+              },
+              "place-khan": {
+                "x": 549.46,
+                "y": 121.83,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 625.03,
+                "y": 180.44
+              },
+              {
+                "items": [],
+                "x": 580.21,
+                "y": 185.2
+              }
+            ]
+          },
+          "9": {
+            "places": [
+              "place-giza",
+              "place-gem",
+              "place-cai"
+            ],
+            "labels": {
+              "place-giza": {
+                "x": 614.06,
+                "y": 320.1,
+                "anchor": "start"
+              },
+              "place-gem": {
+                "x": 754.73,
+                "y": 199.58,
+                "anchor": "start"
+              },
+              "place-cai": {
+                "x": 855.1,
+                "y": 276.3,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 629.39,
+                "y": 265.84
+              },
+              {
+                "items": [],
+                "x": 696.91,
+                "y": 217.94
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
