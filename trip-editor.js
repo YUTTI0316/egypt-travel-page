@@ -43,6 +43,25 @@
     }
   }
 
+  function exportTrip() {
+    if (!trip) return;
+    const exported = JSON.parse(JSON.stringify(trip));
+    const json = JSON.stringify(exported, null, 2);
+    const blob = new Blob([json], { type: "application/json;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    const safeName = String(trip.metadata?.tripId || "trip-data").replace(/[^a-z0-9_-]+/gi, "-");
+    link.href = url;
+    link.download = `${safeName || "trip-data"}-export.json`;
+    link.hidden = true;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    const status = document.querySelector("#trip-editor-status");
+    if (status) status.textContent = `已导出 ${link.download}，可提交给仓库更新`;
+  }
+
   function ensureEditor() {
     if (dialog) return;
     const trigger = document.createElement("button");
@@ -63,14 +82,14 @@
         <div><p>TRIP SETTINGS</p><h2 id="trip-editor-title">编辑旅行信息</h2></div>
         <button type="button" class="trip-editor-close" data-close-editor>关闭</button>
       </header>
-      <p class="trip-editor-status" id="trip-editor-status" aria-live="polite">修改会自��保存到此浏览器</p>
+      <p class="trip-editor-status" id="trip-editor-status" aria-live="polite">修改会自动保存到此浏览器</p>
       <nav class="trip-editor-tabs" aria-label="编辑类别">
         <button type="button" data-editor-tab="itinerary">每日行程</button>
         <button type="button" data-editor-tab="transport">交通</button>
         <button type="button" data-editor-tab="flights">航班</button>
       </nav>
       <div class="trip-editor-content" id="trip-editor-content"></div>
-      <footer class="trip-editor-footer"><span>只保存在当前浏览器和设备，不会修改 GitHub 仓库内容。</span><button type="button" data-close-editor>完成</button></footer>`;
+      <footer class="trip-editor-footer"><span>只保存在当前浏览器和设备；导出 JSON 后可用于更新仓库。</span><div class="trip-editor-footer-actions"><button type="button" class="trip-editor-export" data-export-trip>导出行程 JSON</button><button type="button" data-close-editor>完成</button></div></footer>`;
     document.body.append(dialog);
     dialog.addEventListener("click", handleClick);
     dialog.addEventListener("change", handleChange);
@@ -128,7 +147,7 @@
   function flightEditor() {
     return `<p class="trip-editor-hint">填写航司、航班号、起降时间和机场；预订编号可选。新增信息会同步更新航班卡片。</p>
       ${(trip.flightJourneys || []).map((journey, journeyIndex) => {
-        let flights = trip.flights.filter((flight) => flight.journeyId === journey.id).sort((a,b) => a.sequence - b.sequence);
+        const flights = trip.flights.filter((flight) => flight.journeyId === journey.id).sort((a,b) => a.sequence - b.sequence);
         return `<section class="trip-editor-section"><h3>${escapeHtml(journey.title || `航班行程 ${journeyIndex + 1}`)}</h3>${flights.length ? "" : `<button type="button" class="trip-editor-add" data-add-flight="${journeyIndex}">＋ 添加航班详情</button>`}
           ${flights.map((flight) => {
             const index = trip.flights.indexOf(flight);
@@ -178,10 +197,6 @@
       const flightIndex = Number(input.dataset.path.split(".")[1]);
       trip.flights[flightIndex].airline.name = value;
     }
-    if (input.dataset.path.endsWith(".type") && value === "transport") {
-      const parts = input.dataset.path.split(".");
-      trip.days[Number(parts[1])].schedule[Number(parts[3])].type = value;
-    }
     save();
     refreshPage();
   }
@@ -193,6 +208,7 @@
   }
 
   function handleClick(event) {
+    if (event.target.closest("[data-export-trip]")) { exportTrip(); return; }
     const close = event.target.closest("[data-close-editor]");
     if (close) { dialog.close?.(); dialog.removeAttribute("open"); return; }
     const tab = event.target.closest("[data-editor-tab]");
